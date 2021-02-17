@@ -1,23 +1,24 @@
-import React, { useEffect, useState } from "react";
-import DocumentMeta from "react-document-meta";
+import React from "react";
+import { useHistory } from "react-router-dom";
 
 const Demo = () => {
-  const meta = {
-    meta: {
-      property: {
-        "og:title": "Fruits",
-        "og:description": "Read all about fruits here",
-        "og:image":
-          "https://www.eatforhealth.gov.au/sites/default/files/images/the_guidelines/fruit_selection_155265101_web.jpg",
-      },
-    },
-  };
+  const history = useHistory();
 
   return (
     <div>
-      <DocumentMeta {...meta}>
-        <p>Welcome to fruits.com!!</p>
-      </DocumentMeta>
+      <p>Welcome to fruits.com!!</p>
+      <>
+        {" "}
+        <button onClick={() => history.push("/fruits/1")}>Banana</button>{" "}
+      </>
+      <>
+        {" "}
+        <button onClick={() => history.push("/fruits/2")}>Apple</button>{" "}
+      </>
+      <>
+        {" "}
+        <button onClick={() => history.push("/fruits/3")}>Mango</button>
+      </>
     </div>
   );
 };
